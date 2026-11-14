@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="description" content="bit ausprobieren: KI-Anwendungen verstehen, vorbereitete Bewertungen und Quellen prüfen und nächste Schritte im Demoablauf verwalten.">
+  <title>bit · Interaktive Demo · powered by Nexus Trinity</title>
+  <link rel="canonical" href="https://boga-nt.github.io/bit-demo/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="bit · Interaktive Demo · powered by Nexus Trinity">
+  <meta property="og:description" content="KI-Anwendungen verstehen. Bewertungen und Quellen prüfen. Nächste Schritte im Demoablauf steuern.">
+  <meta property="og:url" content="https://boga-nt.github.io/bit-demo/">
+  <meta property="og:image" content="https://boga-nt.github.io/bit-demo/assets/share-card.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="de_DE">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="bit · Interaktive Demo · powered by Nexus Trinity">
+  <meta name="twitter:description" content="Drei fiktive Einsatzfälle. Bewertungen, Quellen und menschliche Entscheidungen zum Ausprobieren.">
+  <meta name="twitter:image" content="https://boga-nt.github.io/bit-demo/assets/share-card.png">
+  <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./assets/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Zum Inhalt springen</a>
+  <header class="site-header" id="header">
+    <div class="header-inner">
+      <button class="brand-lockup" type="button" data-view="overview" aria-label="bit — powered by Nexus Trinity · Übersicht öffnen">
+        <svg class="brand-symbol" width="34" height="31" viewBox="8 9 104 94" fill="none" aria-hidden="true"><polygon points="60,12 14,100 106,100" stroke="currentColor" stroke-width="6" stroke-linejoin="round"></polygon><polygon points="60,37.9 33.8,88 86.2,88" stroke="currentColor" stroke-width="6" stroke-linejoin="round"></polygon><line x1="51" y1="68" x2="69" y2="68" stroke="#D9A15F" stroke-width="6" stroke-linecap="round"></line></svg>
+        <span class="brand-bit">bit</span><span class="brand-powered">powered by<br><strong>Nexus Trinity</strong></span>
+      </button>
+      <nav class="primary-nav" aria-label="Hauptnavigation">
+        <button type="button" data-view="overview">Übersicht</button>
+        <button type="button" data-view="inventory">Anwendungen</button>
+        <button type="button" data-view="evidence">Nachweise</button>
+        <button type="button" data-view="tasks">Maßnahmen</button>
+        <button type="button" data-view="history">Verlauf</button>
+      </nav>
+      <button class="frag-mobile-button" id="openFrag" type="button" aria-controls="fragPanel" aria-expanded="false">Frag bit ↗</button>
+      <a class="nt-link" href="https://nexus-trinity-showcase.slowspark4.chatgpt.site/">Über Nexus Trinity ↗</a>
+    </div>
+  </header>
+  <div class="demo-ribbon"><div><span class="demo-dot" aria-hidden="true"></span><strong>Interaktive Demo</strong><span>Fiktive Beispieldaten</span></div><button type="button" id="resetDemo">Demo zurücksetzen ↺</button></div>
+  <div class="layout">
+    <main id="main" tabindex="-1">
+      <div id="viewHost"></div>
+      <footer class="main-footer"><strong>KI schlägt vor. Menschen prüfen und entscheiden.</strong><span>Vorbereitete Beispielbewertungen · Kein Live-Modell · Änderungen bleiben in dieser Browser-Demo.</span><a href="https://nexus-trinity-showcase.slowspark4.chatgpt.site/">Über Nexus Trinity ↗</a></footer>
+    </main>
+    <aside class="frag-panel" id="fragPanel" aria-labelledby="fragTitle">
+      <div class="frag-top"><h2 id="fragTitle">Frag <span>bit</span></h2><button id="closeFrag" class="icon-button mobile-only" type="button" aria-label="Frag bit schließen">×</button></div>
+      <p class="frag-kicker">IHRE ANWENDUNG. IHRE FRAGE.</p>
+      <div class="frag-sample" aria-hidden="true"><span class="sample-line"></span><span class="sample-line short"></span><span class="sample-chip">Antwort mit Quellen</span></div>
+      <div class="live-stamp">LIVE-DEMO<br>AUF ANFRAGE</div>
+      <h3>Ihre Fragen.<br>Antworten mit Quellen.</h3>
+      <p>Möchten Sie Frag bit selbst ausprobieren? Lernen Sie die freie Fragefunktion in einer persönlichen Live-Demo kennen.</p>
+      <a class="button primary frag-contact" href="https://www.linkedin.com/company/nexus-trinity/" target="_blank" rel="noopener noreferrer">Live-Demo anfragen <span aria-hidden="true">↗</span></a>
+      <p class="contact-help">Öffnet unsere LinkedIn-Seite.<br>Schreiben Sie uns über „Nachricht“.</p>
+      <div class="frag-footer"><span class="tiny-mark" aria-hidden="true">↳</span><p>Die Beispiele links können Sie sofort erkunden. Ihre eigenen Fragen besprechen wir gern gemeinsam.</p></div>
+    </aside>
+  </div>
+  <div id="fragBackdrop" class="frag-backdrop" hidden></div>
+  <p class="toast" id="notice" role="status" aria-live="polite" aria-atomic="true"></p>
+  <dialog id="sourceDialog" class="dialog source-dialog" aria-labelledby="sourceTitle"><div class="dialog-heading"><span class="eyebrow">QUELLE ZUM BEISPIEL</span><button class="icon-button" type="button" data-close="sourceDialog" aria-label="Quelle schließen">×</button></div><div id="sourceContent"></div><div class="dialog-actions"><button class="button secondary" type="button" data-close="sourceDialog">Zurück zur Bewertung</button></div></dialog>
+  <dialog id="reviewDialog" class="dialog" aria-labelledby="reviewTitle"><form id="reviewForm"><div class="dialog-heading"><span class="eyebrow">MENSCHLICHER SCHRITT</span><button class="icon-button" type="button" data-close="reviewDialog" aria-label="Demoentscheidung schließen">×</button></div><h2 id="reviewTitle">Demoentscheidung dokumentieren</h2><p id="reviewCase" class="dialog-subtitle"></p><p class="quiet-note">Sie erproben den Arbeitsablauf. Die Beispielbewertung bleibt unverändert; dies ist keine fachliche Freigabe.</p><label for="reviewChoice">Wie möchten Sie weiterarbeiten?</label><select id="reviewChoice" name="choice"><option value="review">Vorschlag zur weiteren Prüfung übernehmen</option><option value="clarify">Zuerst offene Angaben klären</option></select><label for="reviewActor">Dokumentiert durch</label><input id="reviewActor" name="actor" required maxlength="80" value="Demo-Nutzer:in"><label for="reviewNote">Ihre Notiz <span>(optional)</span></label><textarea id="reviewNote" name="note" rows="3" maxlength="800" placeholder="Was soll das Team bei der weiteren Prüfung beachten?"></textarea><p class="form-hint">Die beiden vorgeschlagenen Maßnahmen werden in Ihren Demoablauf übernommen.</p><div class="dialog-actions"><button class="button secondary" type="button" data-close="reviewDialog">Abbrechen</button><button class="button primary" type="submit">Demoentscheidung speichern</button></div></form></dialog>
+  <dialog id="taskDialog" class="dialog" aria-labelledby="taskTitle"><form id="taskForm"><div class="dialog-heading"><span class="eyebrow">MASSNAHME BEARBEITEN</span><button class="icon-button" type="button" data-close="taskDialog" aria-label="Maßnahme schließen">×</button></div><h2 id="taskTitle">Nächsten Schritt festhalten</h2><p id="taskCase" class="dialog-subtitle"></p><label for="taskName">Maßnahme</label><input id="taskName" name="title" required maxlength="160"><label for="taskOwner">Verantwortliche Person oder Stelle</label><input id="taskOwner" name="owner" required maxlength="100"><label for="taskState">Bearbeitungsstand</label><select id="taskState" name="status"><option value="open">Offen</option><option value="progress">In Bearbeitung</option><option value="done">Im Demoablauf erledigt</option></select><label for="taskNote">Bearbeitungsnotiz <span>(optional)</span></label><textarea id="taskNote" name="note" rows="3" maxlength="800"></textarea><div class="dialog-actions"><button class="button secondary" type="button" data-close="taskDialog">Abbrechen</button><button class="button primary" type="submit">Änderung speichern</button></div></form></dialog>
+  <dialog id="resetDialog" class="dialog small-dialog" aria-labelledby="resetTitle"><div class="dialog-heading"><span class="eyebrow">NEU AUSPROBIEREN</span><button class="icon-button" type="button" data-close="resetDialog" aria-label="Zurücksetzen schließen">×</button></div><h2 id="resetTitle">Demo zurücksetzen?</h2><p>Ihre Demoentscheidungen, Maßnahmenänderungen und der Verlauf in diesem Tab werden gelöscht. Die drei Beispiele bleiben erhalten.</p><div class="dialog-actions"><button class="button secondary" type="button" data-close="resetDialog">Behalten</button><button id="confirmReset" class="button primary" type="button">Demo zurücksetzen</button></div></dialog>
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
