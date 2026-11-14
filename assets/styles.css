@@ -11,3 +11,11 @@
 
 /* Keep user-entered words inside cards at narrow viewport widths. */
 .task-card h2, .saved-decision p { overflow-wrap: anywhere; }
+/* Canonical bit wordmark from the live MVP3.2 header; logo typography is intentional. */
+.brand-lockup{flex:none;align-items:baseline;gap:9px}
+.brand-symbol{display:block;align-self:center;flex:none;width:34px;height:31px}
+.brand-bit{color:#d9a15f;font:italic 700 36px/1 Georgia,"Times New Roman",serif;letter-spacing:normal}
+.brand-powered{margin-left:3px;color:#9db4af;font:600 11px/1.4 Arial,Helvetica,sans-serif;letter-spacing:1.3px}
+.brand-lockup .brand-name{color:#fff;font:700 15px/1.4 Arial,Helvetica,sans-serif;letter-spacing:.3px}
+@media(max-width:1120px){.brand-powered,.brand-lockup .brand-name{display:none}}
+@media(max-width:480px){.brand-symbol{width:28px;height:27px}.brand-bit{font-size:31px}}
